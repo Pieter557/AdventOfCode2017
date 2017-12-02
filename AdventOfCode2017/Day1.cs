@@ -52,12 +52,3 @@ namespace AdventOfCode2017
         }
     }
 }
-
-
-/*
- * 1212
- * i = 2
- * jump = 2
- * length = 4
- * tc = 2 = 12-10  = i + jumnp - lenght
- */
