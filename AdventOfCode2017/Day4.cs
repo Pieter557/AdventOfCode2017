@@ -19,13 +19,16 @@ namespace AdventOfCode2017
                 {
                     if (words.Contains(item))
                     {
-                        break;
+                        goto NEXT;
                     } else
                     {
                         words.Add(item);
                     }
                 }
                 validPassphrases++;
+                NEXT:
+                continue;
+
             }
             Console.WriteLine("Valid passphrases: " + validPassphrases);
 
@@ -33,7 +36,33 @@ namespace AdventOfCode2017
 
         internal static void Part2()
         {
-            //throw new NotImplementedException();
+            FileInfo inputfile = new FileInfo(Program.dir + "Day4.txt");
+            var stream = inputfile.OpenText();
+            int validPassphrases = 0;
+            while (!stream.EndOfStream)
+            {
+                List<string> words = new List<string>();
+                foreach (String item in stream.ReadLine().Split(' '))
+                {
+                    var chars = item.ToCharArray();
+                    Array.Sort(chars);
+                    String word = new String(chars);
+                    if (words.Contains(word))
+                    {
+                        goto NEXT;
+                    }
+                    else
+                    {
+                        words.Add(word);
+                    }
+                }
+                validPassphrases++;
+                NEXT:
+                continue;
+
+            }
+            Console.WriteLine("Valid passphrases: " + validPassphrases);
+
         }
     }
 }
