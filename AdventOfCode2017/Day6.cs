@@ -8,7 +8,6 @@ namespace AdventOfCode2017 {
 		internal static void Part2() {
 			//input = "0	2	7	0";
 			var banks = new List<int>();
-			int i = 0;
 			foreach (var item in input.Split('\t')) {
 				banks.Add(int.Parse(item));
 			}
@@ -29,7 +28,6 @@ namespace AdventOfCode2017 {
 		internal static void Part1() {
 			//input = "0	2	7	0";
 			var banks = new List<int>();
-			int i = 0;
 			foreach (var item in input.Split('\t')) {
 				banks.Add(int.Parse(item));
 			}
